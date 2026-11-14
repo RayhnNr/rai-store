@@ -6,6 +6,7 @@ import (
 	"net/http"
 	"os"
 
+	"github.com/RayhnNr/raistore/database/seeders"
 	"github.com/gorilla/mux"
 	"github.com/joho/godotenv"
 	"gorm.io/driver/postgres"
@@ -52,10 +53,9 @@ func (server *Server) Initialize(appConfig AppConfig, dbConfig DBConfig) {
 
 	fmt.Println("Database migrated successfully.")
 
-
-
 	server.Router = mux.NewRouter()
 	server.initializeRoutes()
+	seeders.DBSeed(server.DB)
 }
 
 func (server *Server) Run(addr string) {
