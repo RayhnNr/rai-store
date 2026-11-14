@@ -1,0 +1,19 @@
+# Environment
+.env
+.env.*
+
+# Executables
+*.exe
+*.out
+*.test
+
+# IDE
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
